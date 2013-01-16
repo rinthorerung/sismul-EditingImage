@@ -1,2 +1,0 @@
-sismul-EditingImage
-===================
