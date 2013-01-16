@@ -39,5 +39,11 @@ namespace WindowsFormsApplication2
             pictureBox1.Image = imageProcessor.GetImage();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            imageProcessor.ApplyEmboss(4);
+            pictureBox1.Image = imageProcessor.GetImage();
+        }
+
     }
 }

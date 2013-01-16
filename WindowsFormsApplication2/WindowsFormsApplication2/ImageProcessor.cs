@@ -73,6 +73,26 @@ namespace WindowsFormsApplication2
                 }
             }
         }
+        //embos mulai
+        public void ApplyEmboss(double weight)
+        {
+            ConvolutionMatrix matrix = new ConvolutionMatrix(3);
+            matrix.SetAll(1);
+            matrix.Matrix[0, 0] = -1;
+            matrix.Matrix[1, 0] = 0;
+            matrix.Matrix[2, 0] = -1;
+            matrix.Matrix[0, 1] = 0;
+            matrix.Matrix[1, 1] = weight;
+            matrix.Matrix[2, 1] = 0;
+            matrix.Matrix[0, 2] = -1;
+            matrix.Matrix[1, 2] = 0;
+            matrix.Matrix[2, 2] = -1;
+            matrix.Factor = 4;
+            matrix.Offset = 127;
+            bitmapImage = Convolution3x3(bitmapImage, matrix);
+
+        }
+        //embos akhir
 
         public Bitmap Convolution3x3(Bitmap b, ConvolutionMatrix m)
         {
