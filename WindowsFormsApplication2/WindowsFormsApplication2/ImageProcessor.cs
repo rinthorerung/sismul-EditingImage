@@ -73,46 +73,6 @@ namespace WindowsFormsApplication2
                 }
             }
         }
-
-    public void ApplySharpen(double weight)
-        {
-            ConvolutionMatrix matrix = new ConvolutionMatrix(3);
-            matrix.SetAll(1);
-            matrix.Matrix[0, 0] = 0;
-            matrix.Matrix[1, 0] = -2;
-            matrix.Matrix[2, 0] = 0;
-            matrix.Matrix[0, 1] = -2;
-            matrix.Matrix[1, 1] = weight;
-            matrix.Matrix[2, 1] = -2;
-            matrix.Matrix[0, 2] = 0;
-            matrix.Matrix[1, 2] = -2;
-            matrix.Matrix[2, 2] = 0;
-            matrix.Factor = weight - 8;
-            bitmapImage = Convolution3x3(bitmapImage, matrix);
-
-        }
-
-        
-        //sarpen akhir
-        //mulai mean removal
-        public void ApplyMeanRemoval(double weight)
-        {
-            ConvolutionMatrix matrix = new ConvolutionMatrix(3);
-            matrix.SetAll(1);
-            matrix.Matrix[0, 0] = -1;
-            matrix.Matrix[1, 0] = -1;
-            matrix.Matrix[2, 0] = -1;
-            matrix.Matrix[0, 1] = -1;
-            matrix.Matrix[1, 1] = weight;
-            matrix.Matrix[2, 1] = -1;
-            matrix.Matrix[0, 2] = -1;
-            matrix.Matrix[1, 2] = -1;
-            matrix.Matrix[2, 2] = -1;
-            matrix.Factor = weight - 8;
-            bitmapImage = Convolution3x3(bitmapImage, matrix);
-
-        }
-
         //embos mulai
         public void ApplyEmboss(double weight)
         {
