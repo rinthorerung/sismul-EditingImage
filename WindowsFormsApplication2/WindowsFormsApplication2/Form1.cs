@@ -44,6 +44,16 @@ namespace WindowsFormsApplication2
             imageProcessor.ApplyEmboss(4);
             pictureBox1.Image = imageProcessor.GetImage();
         }
+ 	private void button8_Click(object sender, EventArgs e)
+        {
+            imageProcessor.ApplySharpen(11);
+            pictureBox1.Image = imageProcessor.GetImage();
+        }
+	private void button9_Click(object sender, EventArgs e)
+        {
+            imageProcessor.ApplyMeanRemoval();
+            pictureBox1.Image = imageProcessor.GetImage();
+        }
 
     }
 }
