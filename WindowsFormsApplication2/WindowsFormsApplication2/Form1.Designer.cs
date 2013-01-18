@@ -81,6 +81,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button7
             // 
@@ -100,6 +101,7 @@
             this.button8.TabIndex = 7;
             this.button8.Text = "Sharpen";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -109,6 +111,7 @@
             this.button9.TabIndex = 8;
             this.button9.Text = "GrayScale";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -118,6 +121,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "Invert";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // pictureBox1
             // 
@@ -141,6 +145,7 @@
             this.button5.TabIndex = 11;
             this.button5.Text = "Mean Removal";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 

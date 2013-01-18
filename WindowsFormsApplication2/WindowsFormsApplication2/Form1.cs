@@ -53,6 +53,8 @@ namespace WindowsFormsApplication2
 
         private void button10_Click(object sender, EventArgs e)
         {
+            imageProcessor.ApplyInvert();
+            pictureBox1.Image = imageProcessor.GetImage();
         }
 
         private void button9_Click(object sender, EventArgs e)
