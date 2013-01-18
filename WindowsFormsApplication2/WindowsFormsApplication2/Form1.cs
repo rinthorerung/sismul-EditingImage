@@ -39,21 +39,52 @@ namespace WindowsFormsApplication2
             pictureBox1.Image = imageProcessor.GetImage();
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            imageProcessor.ApplySharpen(11);
+            pictureBox1.Image = imageProcessor.GetImage();
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             imageProcessor.ApplyEmboss(4);
             pictureBox1.Image = imageProcessor.GetImage();
         }
- 	private void button8_Click(object sender, EventArgs e)
+
+        private void button10_Click(object sender, EventArgs e)
         {
-            imageProcessor.ApplySharpen(11);
-            pictureBox1.Image = imageProcessor.GetImage();
         }
-	private void button9_Click(object sender, EventArgs e)
+
+        private void button9_Click(object sender, EventArgs e)
         {
-            imageProcessor.ApplyMeanRemoval();
+            imageProcessor.ApplyGreyscale();
             pictureBox1.Image = imageProcessor.GetImage();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.InitialDirectory = "c:\\";
+            saveFileDialog.Filter = "Bitmap files (*.bmp)|*.bmp|Jpeg files (*.jpg)|*.jpg|All valid files (*.bmp/*.jpg)|*.bmp/*.jpg";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (DialogResult.OK == saveFileDialog.ShowDialog())
+            {
+                pictureBox1.Image = imageProcessor.GetImage();
+                pictureBox1.Image.Save(saveFileDialog.FileName);
+               // m_Bitmap.Save(saveFileDialog.FileName);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            imageProcessor.ApplyMeanRemoval(9);
+            pictureBox1.Image = imageProcessor.GetImage();
+        }
+
+
+ 
     }
 }

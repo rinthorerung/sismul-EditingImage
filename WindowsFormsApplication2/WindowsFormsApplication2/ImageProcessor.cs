@@ -44,6 +44,36 @@ namespace WindowsFormsApplication2
         {
             return bitmapImage;
         }
+        //invert mulai
+        public void ApplyInvert()
+        {
+        }
+        //invert akhir
+        //gray mulai
+        public void ApplyGreyscale()
+        {
+            byte A, R, G, B;
+            Color pixelColor;
+
+            for (int y = 0; y < bitmapImage.Height; y++)
+            {
+                for (int x = 0; x < bitmapImage.Width; x++)
+                {
+                    pixelColor = bitmapImage.GetPixel(x, y);
+                    A = pixelColor.A;
+                    R =  (byte)((0.299 * pixelColor.R) + (0.587 * pixelColor.G) + (0.114 * pixelColor.B));
+                    G = B = R;
+
+                    bitmapImage.SetPixel(x, y, Color.FromArgb((int)A, (int)R, (int)G, (int)B));
+                }
+            }
+
+        }
+
+        //gray akhir
+
+        
+        //sepia mulai
         public void ApplySepia(int depth)
         {
             int A, R, G, B;
@@ -74,7 +104,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-	 //sepia akhir
+        //sepia akhir
         //sharpen mulai
         public void ApplySharpen(double weight)
         {
@@ -113,8 +143,8 @@ namespace WindowsFormsApplication2
             matrix.Factor = weight - 8;
             bitmapImage = Convolution3x3(bitmapImage, matrix);
 
-        }	
-
+        }
+        // akhir mean removal
         //embos mulai
         public void ApplyEmboss(double weight)
         {
@@ -135,8 +165,6 @@ namespace WindowsFormsApplication2
 
         }
         //embos akhir
-
-	
 
         public Bitmap Convolution3x3(Bitmap b, ConvolutionMatrix m)
         {
