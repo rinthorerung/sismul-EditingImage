@@ -103,6 +103,7 @@ namespace WindowsFormsApplication2
                 }
             }
         }
+<<<<<<< HEAD
 
         //sepia akhir
         //sharpen mulai
@@ -145,6 +146,8 @@ namespace WindowsFormsApplication2
 
         }
         // akhir mean removal
+=======
+>>>>>>> 39a8ce5a856068193ec4361b861e23e14cef8ea5
         //embos mulai
         public void ApplyEmboss(double weight)
         {
